@@ -24,11 +24,12 @@ int_slide = st.slider('Tahun', min_value=1971, max_value=2015, value=5, step=1)
 int_num = st.number_input('Berapa Besar', min_value=1, max_value=15, value=5, step=1)
 dff= df.loc[df['tahun'] == int_slide]
 dff.sort_values(by=["produksi"], ascending=False)
+dfff= dff.head(int_num)
 
 fig, axs = plt.subplots()
-axs.bar(dff['kode_negara'], dff['produksi'])
+axs.bar(dfff['kode_negara'], dfff['produksi'])
 
-st.pyplot(fig.head(int_num))
+st.pyplot(fig)
 
 st.write(int_slide)
 st.write(int_num)
