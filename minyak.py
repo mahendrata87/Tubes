@@ -20,7 +20,8 @@ axs.plot(dff['tahun'], dff['produksi'])
 
 st.pyplot(fig)
 
-user_input = st.text_input("Tahun = ")
+int_slide = st.slider('Seconds', min_value=1, max_value=10, value=5, step=1)
+int_num = st.number_input('Seconds', min_value=1, max_value=10, value=5, step=1)
 
-int_val = st.slider('Seconds', min_value=1, max_value=10, value=5, step=1)
-int_val = st.number_input('Seconds', min_value=1, max_value=10, value=5, step=1)
+st.write(int_slide)
+st.write(int_num)
