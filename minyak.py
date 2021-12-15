@@ -8,22 +8,23 @@ st.title("Analisis Data Produksi Minyak Dunia")
 
 with open("kode_negara_lengkap.json") as f:
            data = json.load(f)
-    
-dfjson = pd.DataFrame.from_dict(data)
+#for code in data:
+           
+#dfjson = pd.DataFrame.from_dict(data)
+#country_name = df["name"].tolist()
 
-#for country_name in data:
-#           data
-#Plot1
 #country = st.selectbox('Select Country:', 
-#                       fordfjson['name'])
+#                       dfjson['name'])
 
 #st.write('You selected:', country)
+#for country_name in data:
+#           data
+#=====================================Plot1================================
+
 kode='AUS'
 df = pd.read_csv('produksi_minyak_mentah.csv')
 dfc=df.drop(df.index[df['kode_negara'].isin(['WLD', 'G20','OECD'])])
-
 dff = dfc.loc[dfc['kode_negara'] == kode]
-print(dff)
 plt.plot(dff['tahun'], dff['produksi'])
 
 fig, ax = plt.subplots()
@@ -31,7 +32,7 @@ ax.plot(dff['tahun'], dff['produksi'])
 
 st.pyplot(fig)
 
-#Plot2
+#====================================Plot2==================================
 int_slide = st.slider('Tahun', min_value=1971, max_value=2015, value=1971, step=1)
 int_num = st.number_input('Berapa Besar', min_value=1, max_value=15, value=5, step=1)
 df2= dfc.loc[dfc['tahun'] == int_slide]
@@ -44,3 +45,8 @@ axs.bar(df4['kode_negara'], df4['produksi'])
 st.pyplot(fig2)
 
 #Plot3
+df5 = dfc.head(int(int_num))
+df6=df5.groupby('kode_negara', sort=False)['produksi'].sum().nlargest()
+fig3, axs3 = plt.subplots()
+axs3.bar(df4['kode_negara'], df4['produksi'])
+st.pyplot(fig3)
