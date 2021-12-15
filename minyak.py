@@ -15,7 +15,7 @@ dff = df.loc[df['kode_negara'] == kode]
 #print(dff)
 plt.plot(dff['tahun'], dff['produksi'])
 
-fig, ax = plt.subplots()
-ax.plot(dff['tahun'], dff['produksi'])
+fig, axs = plt.subplots()
+axs.plot(dff['tahun'], dff['produksi'])
 
 st.pyplot(fig)
