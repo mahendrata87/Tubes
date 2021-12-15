@@ -12,6 +12,7 @@ with open("kode_negara_lengkap.json") as f:
 dfjson = pd.DataFrame.from_dict(data)
 
 #Plot1
+kode='AUS'
 df = pd.read_csv('produksi_minyak_mentah.csv')
 dff = df.loc[df['kode_negara'] == kode]
 print(dff)
