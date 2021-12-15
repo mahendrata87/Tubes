@@ -24,7 +24,7 @@ int_slide = st.slider('Tahun', min_value=1971, max_value=2015, value=1971, step=
 int_num = st.number_input('Berapa Besar', min_value=1, max_value=15, value=5, step=1)
 dff= df.loc[df['tahun'] == int_slide]
 dff.sort_values(by=["produksi"], ascending=False)
-dfff= dff.head(5)
+dfff= dff.head(int(int_num))
 
 fig, axs = plt.subplots()
 axs.bar(dfff['kode_negara'], dfff['produksi'])
