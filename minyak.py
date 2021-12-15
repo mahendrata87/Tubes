@@ -20,8 +20,7 @@ dfjson = pd.DataFrame.from_dict(data)
 #st.write('You selected:', country)
 kode='AUS'
 df = pd.read_csv('produksi_minyak_mentah.csv')
-dfc=df[df.tahun != 1974]
-dfc=df.drop(df.index[df['tahun']==1974])
+dfc=df.drop(df.index[df['kode_negara'].isin([WLD, G20])])
 
 dff = dfc.loc[dfc['kode_negara'] == kode]
 print(dff)
@@ -38,8 +37,8 @@ int_num = st.number_input('Berapa Besar', min_value=1, max_value=15, value=5, st
 df2= dfc.loc[dfc['tahun'] == int_slide]
 df3 = df2.sort_values(["produksi"], ascending=False)
 df4 = df3.head(int(int_num))
-df5 = df4.merge(dfjson, left_on=['kode_negara'], right_on=["alpha-3"], how='inner')
+#df5 = df4.merge(dfjson, left_on=['kode_negara'], right_on=["alpha-3"], how='inner')
 
 fig2, axs = plt.subplots()
-axs.bar(df5['kode_negara'], df5['produksi'])
+axs.bar(df4['kode_negara'], df4['produksi'])
 st.pyplot(fig2)
