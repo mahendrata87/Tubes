@@ -10,8 +10,9 @@ with open("kode_negara_lengkap.json") as f:
            data = json.load(f)
     
 dfjson = pd.DataFrame.from_dict(data)
-for country_name in data:
-           data
+
+#for country_name in data:
+#           data
 #Plot1
 #country = st.selectbox('Select Country:', 
 #                       fordfjson['name'])
