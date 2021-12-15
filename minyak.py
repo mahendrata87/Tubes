@@ -22,12 +22,12 @@ df = pd.read_csv('produksi_minyak_mentah.csv')
 
 int_slide = st.slider('Tahun', min_value=1971, max_value=2015, value=1971, step=1)
 int_num = st.number_input('Berapa Besar', min_value=1, max_value=15, value=5, step=1)
-dff= df.loc[df['tahun'] == int_slide]
-dff.sort_values(["produksi"], ascending=[1])
-dfff= dff.head(int(int_num))
+df2= df.loc[df['tahun'] == int_slide]
+df3 = df2.sort_values(["produksi"], ascending=[1])
+df4 = df3.head(int(int_num))
 
 fig, axs = plt.subplots()
-axs.bar(dfff['kode_negara'], dfff['produksi'])
+axs.bar(df4['kode_negara'], df4['produksi'])
 
 st.pyplot(fig)
 
