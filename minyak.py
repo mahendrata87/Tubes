@@ -6,30 +6,30 @@ import json
 st.set_page_config(layout="wide")
 st.title("Analisis Data Produksi Minyak Dunia")
 
-st.sidebar.title("Pengaturan")
-left_col, mid_col, right_col = st.columns(3)
+with open("kode_negara_lengkap.json") as f:
+           data = json.load(f)
+    
+dfjson = pd.DataFrame.from_dict(data)
 
-kode = 'AUT'
+#Plot1
 df = pd.read_csv('produksi_minyak_mentah.csv')
-#dff = df.loc[df['kode_negara'] == kode]
-#print(dff)
-#plt.plot(dff['tahun'], dff['produksi'])
+dff = df.loc[df['kode_negara'] == kode]
+print(dff)
+plt.plot(dff['tahun'], dff['produksi'])
 
-#fig, axs = plt.subplots()
-#axs.plot(dff['tahun'], dff['produksi'])
+fig, ax = plt.subplots()
+ax.plot(dff['tahun'], dff['produksi'])
 
-#st.pyplot(fig)
+st.pyplot(fig)
 
+#Plot2
 int_slide = st.slider('Tahun', min_value=1971, max_value=2015, value=1971, step=1)
 int_num = st.number_input('Berapa Besar', min_value=1, max_value=15, value=5, step=1)
 df2= df.loc[df['tahun'] == int_slide]
 df3 = df2.sort_values(["produksi"], ascending=False)
 df4 = df3.head(int(int_num))
+df5 = df4.merge(dfjson, left_on=['kode_negara'], right_on=["alpha-3"], how='inner')
+fig2, axs = plt.subplots()
+axs.bar(df5['kode_negara'], df5['produksi'])
 
-fig, axs = plt.subplots()
-axs.bar(df4['kode_negara'], df4['produksi'])
-
-st.pyplot(fig)
-
-st.write(int_slide)
-st.write(int_num+5)
+st.pyplot(fig2)
