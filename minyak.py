@@ -20,7 +20,7 @@ dfjson = pd.DataFrame.from_dict(data)
 #st.write('You selected:', country)
 kode='AUS'
 df = pd.read_csv('produksi_minyak_mentah.csv')
-dfc=df.drop(df.index[df['kode_negara'].isin([WLD, G20])])
+dfc=df.drop(df.index[df['kode_negara'].isin(['WLD', 'G20'])])
 
 dff = dfc.loc[dfc['kode_negara'] == kode]
 print(dff)
