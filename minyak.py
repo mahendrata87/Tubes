@@ -20,7 +20,7 @@ df = pd.read_csv('produksi_minyak_mentah.csv')
 
 #st.pyplot(fig)
 
-int_slide = st.slider('Tahun', min_value=1971, max_value=2015, value=5, step=1)
+int_slide = st.slider('Tahun', min_value=1971, max_value=2015, value=1971, step=1)
 int_num = st.number_input('Berapa Besar', min_value=1, max_value=15, value=5, step=1)
 dff= df.loc[df['tahun'] == int_slide]
 dff.sort_values(by=["produksi"], ascending=False)
