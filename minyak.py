@@ -23,7 +23,7 @@ df = pd.read_csv('produksi_minyak_mentah.csv')
 int_slide = st.slider('Tahun', min_value=1971, max_value=2015, value=5, step=1)
 int_num = st.number_input('Berapa Besar', min_value=1, max_value=15, value=5, step=1)
 dff= df.loc[df['tahun'] == int_slide]
-dff.sort_values(by["produksi"], ascending = False])
+dff.sort_values(by["produksi"], ascending = False)
 
 fig, axs = plt.subplots()
 axs.bar(dff['kode_negara'], dff['produksi'])
