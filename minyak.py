@@ -30,7 +30,7 @@ df2= df.loc[df['tahun'] == int_slide]
 df3 = df2.sort_values(["produksi"], ascending=False)
 df4 = df3.head(int(int_num))
 df5 = df4.merge(dfjson, left_on=['kode_negara'], right_on=["alpha-3"], how='inner')
-fig2, axs = plt.subplots()
-axs.bar(df5['name'], df5['produksi'])
 
+fig2, axs = plt.subplots()
+axs.bar(df5['kode_negara'], df5['produksi'])
 st.pyplot(fig2)
