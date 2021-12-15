@@ -9,9 +9,9 @@ st.title("Analisis Data Produksi Minyak Dunia")
 st.sidebar.title("Pengaturan")
 left_col, mid_col, right_col = st.columns(3)
 
-kode = input('kode negara = ')
+kode = 'AUS'
 df = pd.read_csv('produksi_minyak_mentah.csv')
 dff = df.loc[df['kode_negara'] == kode]
 #print(dff)
 plt.plot(dff['tahun'], dff['produksi'])
-plt.show()
+st.write(plt.show())
