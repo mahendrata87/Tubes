@@ -11,17 +11,24 @@ left_col, mid_col, right_col = st.columns(3)
 
 kode = 'AUT'
 df = pd.read_csv('produksi_minyak_mentah.csv')
-dff = df.loc[df['kode_negara'] == kode]
+#dff = df.loc[df['kode_negara'] == kode]
 #print(dff)
-plt.plot(dff['tahun'], dff['produksi'])
+#plt.plot(dff['tahun'], dff['produksi'])
+
+#fig, axs = plt.subplots()
+#axs.plot(dff['tahun'], dff['produksi'])
+
+#st.pyplot(fig)
+
+int_slide = st.slider('Tahun', min_value=1971, max_value=2015, value=5, step=1)
+int_num = st.number_input('Berapa Besar', min_value=1, max_value=15, value=5, step=1)
+dff= df.loc[df['tahun'] == int_slide]
+dff.sort_values(by["produksi"], ascending = False])
 
 fig, axs = plt.subplots()
-axs.plot(dff['tahun'], dff['produksi'])
+axs.bar(dff['kode_negara'], dff['produksi'])
 
-st.pyplot(fig)
-
-int_slide = st.slider('Seconds', min_value=1, max_value=10, value=5, step=1)
-int_num = st.number_input('Seconds', min_value=1, max_value=10, value=5, step=1)
+st.pyplot(fig.head(int_num))
 
 st.write(int_slide)
 st.write(int_num)
