@@ -32,4 +32,4 @@ axs.bar(dfff['kode_negara'], dfff['produksi'])
 st.pyplot(fig)
 
 st.write(int_slide)
-st.write(int_num)
+st.write(int_num+5)
