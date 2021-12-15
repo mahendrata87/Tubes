@@ -18,7 +18,7 @@ dfjson = pd.DataFrame.from_dict(data)
 #                       fordfjson['name'])
 
 #st.write('You selected:', country)
-
+kode='AUS'
 df = pd.read_csv('produksi_minyak_mentah.csv')
 dfc=df[df.tahun != 1974]
 dfc=df.drop(df.index[df['tahun']==1974])
