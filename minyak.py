@@ -154,7 +154,7 @@ for index in df0.index:
     negara_0 = df0.loc[index,'kode_negara']
     m=0
     for kode in data:
-        if negara_0 == kode["alpha-3"]: 
+        if negara_0 == kode["name"]: 
             st.write('Nama Negara :', data[m]["name"])
             st.write('Kode Negara :',data[m]['alpha-3'])
             st.write('Region      :',data[m]['region'])
