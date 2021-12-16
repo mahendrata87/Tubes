@@ -58,8 +58,10 @@ st.pyplot(fig2)
 
 #Plot3
 df5 = dfc.head(int(int_num))
-df6=df5.groupby('kode_negara', sort=False)['produksi'].sum().nlargest()
-print(df6)
+dfa = df5.groupby(['kode_negara'], as_index=False)['produksi'].agg('sum')
+dfb = dfa.sort_values(['produksi'],ascending=[0])
+
 fig3, axs3 = plt.subplots()
-axs3.bar(df6['kode_negara'], df6['produksi'])
+axs3.bar(dfb['kode_negara'], dfb['produksi'])
 st.pyplot(fig3)
+
