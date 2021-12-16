@@ -12,7 +12,7 @@ with open("kode_negara_lengkap.json") as f:
 #=====================================Plot1================================
 
 df = pd.read_csv('produksi_minyak_mentah.csv')
-dfc=df.drop(df.index[df['kode_negara'].isin(['WLD', 'G20','OECD'])])
+dfc=df.drop(df.index[df['kode_negara'].isin(['WLD', 'G20','OECD','OEU'])])
 
 dfcode = dfc['kode_negara'].values.tolist()
 dfnegara = list()
