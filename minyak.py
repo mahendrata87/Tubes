@@ -12,6 +12,9 @@ dfc=df.drop(df.index[df['kode_negara'].isin(['WLD', 'G20','OECD','OEU','EU28'])]
 
 with open("kode_negara_lengkap.json") as f:
            data = json.load(f)
+data1 = pd.DataFrame.from_dict(data)
+data2 = data1[['name', 'alpha-3','region','sub-region']]
+
 st.subheader("Data csv :")
 st.dataframe(dfc)
 
@@ -171,6 +174,9 @@ st.subheader("Data Negara yang Tidak Memproduksi Minyak")
 
 dfn0 = dfa.loc[dfa["produksi"] == 0]
 
+dffinal=dfn0.merge(data2, left_on='kode_negara', right_on='name', how='inner')
+st.dataframe(dffinal)
+'''
 for index in dfn0.index:
     negara_n0 = dfn0.loc[index,'kode_negara']
     n=0
@@ -182,3 +188,4 @@ for index in dfn0.index:
             st.write('Sub-Region  :',data[n]['sub-region'])
             st.write(' ')
         n=n+1
+'''
