@@ -2,10 +2,14 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import json
+import pillow
 
 st.set_page_config(layout="wide")
 st.title("Aplikasi Analisis Data Produksi Minyak Mentah Dunia")
 st.sidebar.title("Pengaturan")
+
+image = Image.open('tj_logo.png')
+st.sidebar.image(image)
 
 df = pd.read_csv('produksi_minyak_mentah.csv')
 dfc=df.drop(df.index[df['kode_negara'].isin(['WLD', 'G20','OECD','OEU','EU28'])])
