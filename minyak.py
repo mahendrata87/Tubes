@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import json
 
 st.set_page_config(layout="wide")
-st.title("Aplikasi Analisis Data Produksi Minyak Mentah Dunia Tahun 1971 - 2015")
+st.title("Aplikasi Analisis Data Produksi Minyak Mentah Dunia")
 st.sidebar.title("Pengaturan")
 
 df = pd.read_csv('produksi_minyak_mentah.csv')
