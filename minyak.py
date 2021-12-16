@@ -63,10 +63,10 @@ i = 0
 for kode in data:
     if negara_max == kode["name"]:
         st.write("Data negara Penghasil minyak mentah pada tahun", int_slide,"adalah :") 
-        st.write('nama negara :', data[i]["name"])
-        st.write('kode negara :',data[i]['alpha-3'])
-        st.write('region      :',data[i]['region'])
-        st.write('Sub-region  :',data[i]['sub-region'])
+        st.write('Nama Negara :', data[i]["name"])
+        st.write('Kode Negara :',data[i]['alpha-3'])
+        st.write('Region      :',data[i]['region'])
+        st.write('Sub-Region  :',data[i]['sub-region'])
         st.write("Dengan produksi minyak mentah sebesar = ", produksi_max)
     i=i+1
 
