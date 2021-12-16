@@ -41,7 +41,6 @@ plt.plot(dff['tahun'], dff['produksi'])
 
 fig, ax = plt.subplots()
 ax.plot(dff['tahun'], dff['produksi'])
-ax.grids()
 st.pyplot(fig)
 
 #====================================Plot2==================================
@@ -57,6 +56,7 @@ axs.bar(df4['kode_negara'], df4['produksi'])
 st.pyplot(fig2)
 
 #Plot3
+st.header("Grafik Negara Penghasil Minyak Mentah Terbesar Kumulatif")
 dfa = dfc.groupby(['kode_negara'], as_index=False)['produksi'].agg('sum')
 dfb = dfa.sort_values(['produksi'],ascending=[0])
 df5 = dfb.head(int(int_num))
