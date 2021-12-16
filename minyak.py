@@ -7,11 +7,11 @@ from PIL import Image
 st.set_page_config(layout="wide")
 st.title("Aplikasi Analisis Data Produksi Minyak Mentah Dunia")
 st.subheader('dibuat oleh Syahrial Fitrachman (12220060)'
-st.sidebar.title("Settings")
 
 image = Image.open('oils.png')
 st.sidebar.image(image)
-
+             
+st.sidebar.title("Settings")
 left_col, mid_col, right_col = st.columns(3)
 
 df = pd.read_csv('produksi_minyak_mentah.csv')
