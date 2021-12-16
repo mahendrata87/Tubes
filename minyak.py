@@ -64,7 +64,7 @@ df4 = df3.head(int(int_num))
 fig2 = plt.figure(figsize=(12, 5))
 plt.bar(df4['kode_negara'], df4['produksi'])
 
-plt.xticks(rotation=75)
+plt.xticks(rotation='vertical')
 st.pyplot(fig2)
 
 #==================================================== Plot3 ====================================================
@@ -73,8 +73,10 @@ dfa = dfc.groupby(['kode_negara'], as_index=False)['produksi'].agg('sum')
 dfb = dfa.sort_values(['produksi'],ascending=[0])
 df5 = dfb.head(int(int_num))
 
-fig3, axs3 = plt.subplots()
-axs3.bar(df5['kode_negara'], df5['produksi'])
+fig3 = plt.figure(figsize=(12, 5))
+plt.bar(df5['kode_negara'], df5['produksi'])
+
+plt.xticks(rotation='vertical')
 st.pyplot(fig3)
 
 #=================================================== Data Summary ==============================================
