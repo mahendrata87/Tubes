@@ -62,7 +62,7 @@ df4 = df3.head(int(int_num))
 
 fig2, axs = plt.subplots()
 axs.bar(df4['kode_negara'], df4['produksi'])
-axs.xticks(x,labels,rotation=80)
+axs.xticks(df4['produksi'], df4['kode_negara'],rotation=80)
 st.pyplot(fig2)
 
 #==================================================== Plot3 ====================================================
@@ -78,12 +78,11 @@ st.pyplot(fig3)
 #=================================================== Data Summary ==============================================
 st.header("Data Summary")
 #Negara Penghasil minyak mentah terbesar pada tahun T
-st.subheader("Data Negara Penghasil Minyak Mentah Terbesar pada Tahun") 
+st.subheader("Data Negara Penghasil Minyak Mentah Terbesar pada Tahun", str(int_slide)) 
 
 imax = df3["produksi"].idxmax()
 produksi_max = df3.loc[imax,'produksi']
 negara_max = df3.loc[imax,'kode_negara']
-st.write(int_slide)
 i = 0
 
 for kode in data:
