@@ -64,14 +64,9 @@ df4 = df3.head(int(int_num))
 fig2 = plt.figure(figsize=(12, 5))
 plt.bar(df4['kode_negara'], df4['produksi'])
 
-plt.xticks(rotation='vertical')
+plt.xticks(rotation=90)
 st.pyplot(fig2)
 
-'''
-fig2, axs = plt.subplots()
-axs.bar(df4['kode_negara'], df4['produksi'])
-st.pyplot(fig2)
-'''
 #==================================================== Plot3 ====================================================
 st.header("Grafik Negara Penghasil Minyak Mentah Terbesar Kumulatif")
 dfa = dfc.groupby(['kode_negara'], as_index=False)['produksi'].agg('sum')
