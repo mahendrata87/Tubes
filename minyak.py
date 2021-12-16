@@ -2,7 +2,13 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import json
+from PIL import image 
 
+image = Image.open('tj_logo.png')
+st.sidebar.image(image)
+
+st.sidebar.title("Pengaturan")
+left_col, mid_col, right_col = st.columns(3)
 st.set_page_config(layout="wide")
 st.title("Aplikasi Analisis Data Produksi Minyak Mentah Dunia Tahun 1971 - 2015")
 
