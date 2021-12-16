@@ -55,6 +55,7 @@ st.header("Grafik Negara Penghasil Minyak Mentah Terbesar di Setiap Tahun")
 
 int_slide = st.slider('Tahun (T) :', min_value=1971, max_value=2015, value=1971, step=1)
 int_num = st.number_input('Berapa Besar (B) :', min_value=1, max_value=50, value=3, step=1)
+str_slide = str(int_slide)
 
 df2= dfc.loc[dfc['tahun'] == int_slide]
 df3 = df2.sort_values(["produksi"], ascending=False)
@@ -78,7 +79,7 @@ st.pyplot(fig3)
 #=================================================== Data Summary ==============================================
 st.header("Data Summary")
 #Negara Penghasil minyak mentah terbesar pada tahun T
-st.subheader("Data Negara Penghasil Minyak Mentah Terbesar pada Tahun") 
+st.subheader("Data Negara Penghasil Minyak Mentah Terbesar pada Tahun", str_slide) 
 st.write(int_slide)
 
 imax = df3["produksi"].idxmax()
