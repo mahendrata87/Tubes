@@ -15,8 +15,7 @@ with open("kode_negara_lengkap.json") as f:
 st.header("Grafik Besar Produksi Minyak Mentah Setiap Negara per Tahun")
 df = pd.read_csv('produksi_minyak_mentah.csv')
 dfc=df.drop(df.index[df['kode_negara'].isin(['WLD', 'G20','OECD','OEU','EU28'])])
-dfh = dfc
-dfcode = dfh['kode_negara'].values.tolist()
+dfcode = dfc['kode_negara'].values.tolist()
 dfnegara = list()
 
 for country_code in dfcode:
@@ -25,13 +24,13 @@ for country_code in dfcode:
                                  country_code = country_name["name"]
            dfnegara.append(country_code)
 
-dfh["kode_negara"] = dfnegara
-dfr = dfh.sort_values(by=['kode_negara'], ascending=True)
+dfc["kode_negara"] = dfnegara
+dfr = dfc.sort_values(by=['kode_negara'], ascending=True)
 df_baru = dfr.drop_duplicates('kode_negara')
 select = st.selectbox('Pilih Negara (N) :',
                       (df_baru['kode_negara']))
 
-groups = dfh.groupby(dfh['kode_negara'])
+groups = dfc.groupby(dfh['kode_negara'])
 df_baru = groups.get_group(select)
 
 negara = select
