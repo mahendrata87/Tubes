@@ -3,10 +3,10 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import json
 
-st.sidebar.title("Pengaturan")
-
 st.set_page_config(layout="wide")
 st.title("Aplikasi Analisis Data Produksi Minyak Mentah Dunia Tahun 1971 - 2015")
+st.sidebar.title("Pengaturan")
+
 
 with open("kode_negara_lengkap.json") as f:
            data = json.load(f)
