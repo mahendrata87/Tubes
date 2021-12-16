@@ -15,7 +15,7 @@ kode='AUS'
 df = pd.read_csv('produksi_minyak_mentah.csv')
 dfc=df.drop(df.index[df['kode_negara'].isin(['WLD', 'G20','OECD'])])
 
-dfcode = dfc[kode_negara].values.tolist()
+dfcode = dfc['kode_negara'].values.tolist()
 dfnegara = list()
 
 for country_code in dfcode:
