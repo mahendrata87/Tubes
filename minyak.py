@@ -62,7 +62,11 @@ negara_max = df3.loc[imax,'kode_negara']
 i = 0
 for kode in data:
     if negara_max == kode["name"]:
-        st.write("Data negara Penghasil minyak mentah pada tahun", int_slide,"adalah :" ,data[i]["name"]+",",data[i]['alpha-3']+",",data[i]['region']+",",data[i]['sub-region'])
+        st.write("Data negara Penghasil minyak mentah pada tahun", int_slide,"adalah :") 
+        st.write('name        :', data[i]["name"])
+        st.write('kode negara :',data[i]['alpha-3'])
+        st.write('region      :',data[i]['region'])
+        st.write('Sub-region  :'data[i]['sub-region'])
         st.write("Dengan produksi minyak mentah sebesar = ", produksi_max)
     i=i+1
 
