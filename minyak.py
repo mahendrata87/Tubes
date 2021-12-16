@@ -8,7 +8,7 @@ st.set_page_config(layout="wide")
 st.title("Aplikasi Analisis Data Produksi Minyak Mentah Dunia")
 st.sidebar.title("Pengaturan")
 
-image = Image.open('tj_logo.png')
+image = Image.open('oil_rig.png')
 st.sidebar.image(image)
 
 df = pd.read_csv('produksi_minyak_mentah.csv')
