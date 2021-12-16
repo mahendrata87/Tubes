@@ -8,23 +8,29 @@ st.title("Analisis Data Produksi Minyak Dunia")
 
 with open("kode_negara_lengkap.json") as f:
            data = json.load(f)
-#for code in data:
-           
-#dfjson = pd.DataFrame.from_dict(data)
-#country_name = df["name"].tolist()
 
-#country = st.selectbox('Select Country:', 
-#                       dfjson['name'])
-
-#st.write('You selected:', country)
-#for country_name in data:
-#           data
 #=====================================Plot1================================
 
 kode='AUS'
 df = pd.read_csv('produksi_minyak_mentah.csv')
 dfc=df.drop(df.index[df['kode_negara'].isin(['WLD', 'G20','OECD'])])
-dff = dfc.loc[dfc['kode_negara'] == kode]
+
+dfcode = dfc[kode_negara].values.tolist()
+dfnegara = list()
+
+for country_code in dfcode:
+           for country_name in dfjson:
+                      if country_code == country_name["alpha-3"]:
+                                 country_code = country_name["name"]
+           dfnegara.append(country_code)
+dfc["kode_negara"] = dfnegara
+dfr = dfc.sort_values(by=['kode_negara'], ascending=True)
+df_baru = dfr.drop_duplicates('kode_negara')
+select = st.selectbox('Select Country :',
+                      (df_new['kode_negara']))
+negara = select
+
+dff = df_baru.loc[df_baru['kode_negara'] == negara]
 plt.plot(dff['tahun'], dff['produksi'])
 
 fig, ax = plt.subplots()
