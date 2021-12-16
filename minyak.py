@@ -159,4 +159,5 @@ for index in df0.index:
             st.write('Kode Negara :',data[m]['alpha-3'])
             st.write('Region      :',data[m]['region'])
             st.write('Sub-Region  :',data[m]['sub-region'])
+            st.write(' ')
         m=m+1
