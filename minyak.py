@@ -62,9 +62,9 @@ df3 = df2.sort_values(["produksi"], ascending=False)
 df4 = df3.head(int(int_num))
 
 fig2 = plt.figure(figsize=(12, 5))
-plt.plot(df4['kode_negara'], df4['produksi'])
+plt.bar(df4['kode_negara'], df4['produksi'])
 
-#plt.xlabel(rotation = "vertical")
+plt.xlabels(rotation = "vertical")
 st.pyplot(fig2)
 
 '''
