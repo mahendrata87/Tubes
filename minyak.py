@@ -7,14 +7,15 @@ st.set_page_config(layout="wide")
 st.title("Aplikasi Analisis Data Produksi Minyak Mentah Dunia Tahun 1971 - 2015")
 st.sidebar.title("Pengaturan")
 
-
+df = pd.read_csv('produksi_minyak_mentah.csv')
+dfc=df.drop(df.index[df['kode_negara'].isin(['WLD', 'G20','OECD','OEU','EU28'])])
+st.dataframe(dfc)
 with open("kode_negara_lengkap.json") as f:
            data = json.load(f)
 
 #==================================================== Plot1 ====================================================
 st.header("Grafik Besar Produksi Minyak Mentah Setiap Negara per Tahun")
-df = pd.read_csv('produksi_minyak_mentah.csv')
-dfc=df.drop(df.index[df['kode_negara'].isin(['WLD', 'G20','OECD','OEU','EU28'])])
+
 dfcode = dfc['kode_negara'].values.tolist()
 dfnegara = list()
 
