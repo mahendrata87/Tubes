@@ -149,8 +149,8 @@ st.subheader("Data Negara Penghasil yang Tidak Memproduksi Minyak pada Tahun")
 st.write(int_slide)
 
 df0 = dfst0.loc[dfst0["produksi"] == 0]
-negara_0 = df0.loc['kode_negara']
 m = 0
+
 for kode in data:
     for index in df0.index :
         negara_0 = df0.loc(index, ['kode_negara'])
