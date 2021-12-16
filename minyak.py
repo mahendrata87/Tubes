@@ -66,7 +66,7 @@ for kode in data:
         st.write('name        :', data[i]["name"])
         st.write('kode negara :',data[i]['alpha-3'])
         st.write('region      :',data[i]['region'])
-        st.write('Sub-region  :'data[i]['sub-region'])
+        st.write('Sub-region  :',data[i]['sub-region'])
         st.write("Dengan produksi minyak mentah sebesar = ", produksi_max)
     i=i+1
 
