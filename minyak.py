@@ -6,10 +6,13 @@ from PIL import Image
 
 st.set_page_config(layout="wide")
 st.title("Aplikasi Analisis Data Produksi Minyak Mentah Dunia")
-st.sidebar.title("Pengaturan")
+st.subheader('dibuat oleh Syahrial Fitrachman (12220060)'
+st.sidebar.title("Settings")
 
 image = Image.open('oils.png')
 st.sidebar.image(image)
+
+left_col, mid_col, right_col = st.columns(3)
 
 df = pd.read_csv('produksi_minyak_mentah.csv')
 dfc=df.drop(df.index[df['kode_negara'].isin(['WLD', 'G20','OECD','OEU','EU28'])])
