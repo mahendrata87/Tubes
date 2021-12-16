@@ -58,7 +58,7 @@ st.pyplot(fig2)
 imax = df3["produksi"].idxmax()
 produksi_max = df3.loc[imax,'produksi']
 negara_max = df3.loc[imax,'kode_negara']
-st.header("Data negara Penghasil minyak mentah pada tahun", int_slide)
+st.subheader("Data negara Penghasil minyak mentah pada tahun", int_slide)
 i = 0
 for kode in data:
     if negara_max == kode["name"]:
