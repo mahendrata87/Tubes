@@ -148,16 +148,16 @@ for kode in data:
 st.subheader("Data Negara Penghasil yang Tidak Memproduksi Minyak pada Tahun") 
 st.write(int_slide)
 
-df0 = dfst0.loc[dfst0["produksi"] = 0]
+df0 = dfst0.loc[dfst0["produksi"] == 0]
 negara_0 = df0.loc['kode_negara']
 m = 0
-
-
 for kode in data:
-    if negara_0 == kode["name"]: 
-        st.write('Nama Negara :', data[m]["name"])
-        st.write('Kode Negara :',data[m]['alpha-3'])
-        st.write('Region      :',data[m]['region'])
-        st.write('Sub-Region  :',data[m]['sub-region'])
-        st.write(" ")
-    m=m+1
+    for index in df0.index :
+        negara_0 = df0.loc(index, ['kode_negara'])
+        if negara_0 == kode["name"]: 
+            st.write('Nama Negara :', data[m]["name"])
+            st.write('Kode Negara :',data[m]['alpha-3'])
+            st.write('Region      :',data[m]['region'])
+            st.write('Sub-Region  :',data[m]['sub-region'])
+            st.write(" ")
+        m=m+1
