@@ -164,3 +164,20 @@ for index in df0.index:
             st.write('Sub-Region  :',data[m]['sub-region'])
             st.write(' ')
         m=m+1
+
+#Negara yang Tidak Memproduksi Minyak
+st.subheader("Data Negara yang Tidak Memproduksi Minyak") 
+
+dfn0 = dfa.loc[dfa["produksi"] == 0]
+
+for index in dfn0.index:
+    negara_n0 = dfn0.loc[index,'kode_negara']
+    n=0
+    for kode in data:
+        if negara_n0 == kode["name"]: 
+            st.write('Nama Negara :', data[n]["name"])
+            st.write('Kode Negara :',data[n]['alpha-3'])
+            st.write('Region      :',data[n]['region'])
+            st.write('Sub-Region  :',data[n]['sub-region'])
+            st.write(' ')
+        m=n+1
