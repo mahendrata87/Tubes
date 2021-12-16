@@ -104,5 +104,5 @@ for kode in data:
         st.write('Kode Negara :',data[j]['alpha-3'])
         st.write('Region      :',data[j]['region'])
         st.write('Sub-Region  :',data[j]['sub-region'])
-        st.write("Dengan produksi minyak mentah sebesar = ", produksi_max)
+        st.write("Dengan produksi minyak mentah sebesar = ", produksi_min)
     j=j+1
