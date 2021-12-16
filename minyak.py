@@ -27,7 +27,7 @@ dfc["kode_negara"] = dfnegara
 dfr = dfc.sort_values(by=['kode_negara'], ascending=True)
 df_baru = dfr.drop_duplicates('kode_negara')
 select = st.selectbox('Select Country :',
-                      (df_new['kode_negara']))
+                      (df_baru['kode_negara']))
 negara = select
 
 dff = df_baru.loc[df_baru['kode_negara'] == negara]
