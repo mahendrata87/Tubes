@@ -9,6 +9,10 @@ st.sidebar.title("Pengaturan")
 
 df = pd.read_csv('produksi_minyak_mentah.csv')
 dfc=df.drop(df.index[df['kode_negara'].isin(['WLD', 'G20','OECD','OEU','EU28'])])
+
+with open("kode_negara_lengkap.json") as f:
+           data = json.load(f)
+
 dfcode = dfc['kode_negara'].values.tolist()
 dfnegara = list()
 
@@ -23,9 +27,6 @@ dfr = dfc.sort_values(by=['kode_negara'], ascending=True)
 df_baru = dfr.drop_duplicates('kode_negara')
 
 st.dataframe(df_baru)
-
-with open("kode_negara_lengkap.json") as f:
-           data = json.load(f)
 
 #==================================================== Plot1 ====================================================
 st.header("Grafik Besar Produksi Minyak Mentah Setiap Negara per Tahun")
