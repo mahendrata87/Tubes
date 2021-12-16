@@ -62,8 +62,8 @@ negara_max = df3.loc[imax,'kode_negara']
 i = 0
 for kode in data:
     if negara_max == kode["name"]:
-        print(data[i]["name"]+",",data[i]['alpha-3']+",",data[i]['region']+",",data[i]['sub-region'])
-        print(produksi_max)
+        st.write(data[i]["name"]+",",data[i]['alpha-3']+",",data[i]['region']+",",data[i]['sub-region'])
+        st.write(produksi_max)
     i=i+1
 
 #Plot3
