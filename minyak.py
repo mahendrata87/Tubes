@@ -60,10 +60,10 @@ st.pyplot(fig2)
 dfp = pd.read_csv('produksi_minyak_mentah.csv')
 dfp2=dfp.drop(dfp.index[dfp['kode_negara'].isin(['WLD', 'G20','OECD','OEU','EU28'])])
 
-df5 = dfp2.head(int(int_num))
-dfa = df5.groupby(['kode_negara'], as_index=False)['produksi'].agg('sum')
+dfa = dfp2.groupby(['kode_negara'], as_index=False)['produksi'].agg('sum')
 dfb = dfa.sort_values(['produksi'],ascending=[0])
+df5 = dfb.head(int(int_num))
 
 fig3, axs3 = plt.subplots()
-axs3.bar(dfb['kode_negara'], dfb['produksi'])
+axs3.bar(df5['kode_negara'], df5['produksi'])
 st.pyplot(fig3)
