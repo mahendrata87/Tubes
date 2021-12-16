@@ -11,7 +11,6 @@ with open("kode_negara_lengkap.json") as f:
 
 #=====================================Plot1================================
 
-kode='AUS'
 df = pd.read_csv('produksi_minyak_mentah.csv')
 dfc=df.drop(df.index[df['kode_negara'].isin(['WLD', 'G20','OECD'])])
 
@@ -28,6 +27,10 @@ dfr = dfc.sort_values(by=['kode_negara'], ascending=True)
 df_baru = dfr.drop_duplicates('kode_negara')
 select = st.selectbox('Select Country :',
                       (df_baru['kode_negara']))
+
+groups = dfc.groupby(dfc['kode_negara'])
+df_baru = groups.get_group(select)
+
 negara = select
 
 dff = df_baru.loc[df_baru['kode_negara'] == negara]
