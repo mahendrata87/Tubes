@@ -30,7 +30,7 @@ df_baru = dfr.drop_duplicates('kode_negara')
 select = st.selectbox('Pilih Negara (N) :',
                       (df_baru['kode_negara']))
 
-groups = dfc.groupby(dfh['kode_negara'])
+groups = dfc.groupby(dfc['kode_negara'])
 df_baru = groups.get_group(select)
 
 negara = select
