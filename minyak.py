@@ -39,9 +39,9 @@ negara = select
 dff = df_baru.loc[df_baru['kode_negara'] == negara]
 plt.plot(dff['tahun'], dff['produksi'])
 
-fig, ax = plt.subplots(nrows=1, ncols=1, figure=self, gridspec_kw)
+fig, ax = plt.subplots()
 ax.plot(dff['tahun'], dff['produksi'])
-
+ax.grids()
 st.pyplot(fig)
 
 #====================================Plot2==================================
