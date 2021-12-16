@@ -144,9 +144,9 @@ l = 0
 
 for kode in data:
     if negara_jmin == kode["name"]:
-        st.write('Nama Negara\t :', data[l]["name"])
-        st.write('Kode Negara \t:',data[l]['alpha-3'])
-        st.write('Region \t:',data[l]['region'])
+        st.write('Nama Negara :', data[l]["name"])
+        st.write('Kode Negara :',data[l]['alpha-3'])
+        st.write('Region      /n:',data[l]['region'])
         st.write('Sub-Region  :',data[l]['sub-region'])
         st.write("Dengan produksi minyak mentah sebesar = ", produksi_jmin)
     l=l+1
