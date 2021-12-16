@@ -180,4 +180,4 @@ for index in dfn0.index:
             st.write('Region      :',data[n]['region'])
             st.write('Sub-Region  :',data[n]['sub-region'])
             st.write(' ')
-        m=n+1
+        n=n+1
