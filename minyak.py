@@ -8,8 +8,6 @@ st.set_page_config(layout="wide")
 st.title("Aplikasi Analisis Data Produksi Minyak Mentah Dunia")
 st.subheader('dibuat oleh Syahrial Fitrachman (12220060)')
 
-st.sidebar.title("Settings")
-
 image = Image.open('oils.png')
 st.sidebar.image(image)
 
