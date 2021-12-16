@@ -174,7 +174,9 @@ st.subheader("Data Negara yang Tidak Memproduksi Minyak")
 
 dfn0 = dfa.loc[dfa["produksi"] == 0]
 
-dffinal=dfn0.merge(data2, left_on='kode_negara', right_on='name', how='inner')
+df_n0=dfn0.merge(data2, left_on='kode_negara', right_on='name', how='inner')
+dffinal = df_n0[['name', 'alpha-3','region','sub-region']]
+
 st.dataframe(dffinal)
 '''
 for index in dfn0.index:
