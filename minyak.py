@@ -148,7 +148,7 @@ for kode in data:
     l=l+1
 
 #Negara yang Tidak Memproduksi Minyak pada Tahun T
-st.subheader("Data Negara Penghasil yang Tidak Memproduksi Minyak pada Tahun") 
+st.subheader("Data Negara yang Tidak Memproduksi Minyak pada Tahun") 
 st.write(int_slide)
 
 df0 = df2.loc[df2["produksi"] == 0]
