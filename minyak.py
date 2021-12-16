@@ -64,7 +64,7 @@ df4 = df3.head(int(int_num))
 fig2 = plt.figure(figsize=(12, 5))
 plt.plot(df4['kode_negara'], df4['produksi'])
 
-plt.xlabel (rotation = "vertical")
+#plt.xlabel(rotation = "vertical")
 st.pyplot(fig2)
 
 '''
