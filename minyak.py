@@ -55,6 +55,17 @@ fig2, axs = plt.subplots()
 axs.bar(df4['kode_negara'], df4['produksi'])
 st.pyplot(fig2)
 
+imax = df3["produksi"].idxmax()
+produksi_max = df3.loc[imax,'produksi']
+negara_max = df3.loc[imax,'kode_negara']
+
+i = 0
+for kode in data:
+    if negara_max == kode["name"]:
+        print(data[i]["name"]+",",data[i]['alpha-3']+",",data[i]['region']+",",data[i]['sub-region'])
+        print(produksi_max)
+    i=i+1
+
 #Plot3
 st.header("Grafik Negara Penghasil Minyak Mentah Terbesar Kumulatif")
 dfa = dfc.groupby(['kode_negara'], as_index=False)['produksi'].agg('sum')
