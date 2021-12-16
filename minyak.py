@@ -156,18 +156,10 @@ st.subheader("Data Negara yang Tidak Memproduksi Minyak pada Tahun")
 st.write(int_slide)
 
 df0 = df2.loc[df2["produksi"] == 0]
+df_0 = df0.merge(data2, left_on='kode_negara', right_on='name', how='inner')
+df__0 = df_0[['name', 'alpha-3','region','sub-region']]
 
-for index in df0.index:
-    negara_0 = df0.loc[index,'kode_negara']
-    m=0
-    for kode in data:
-        if negara_0 == kode["name"]: 
-            st.write('Nama Negara :', data[m]["name"])
-            st.write('Kode Negara :',data[m]['alpha-3'])
-            st.write('Region      :',data[m]['region'])
-            st.write('Sub-Region  :',data[m]['sub-region'])
-            st.write(' ')
-        m=m+1
+st.dataframe(df__0)
 
 #Negara yang Tidak Memproduksi Minyak
 st.subheader("Data Negara yang Tidak Memproduksi Minyak") 
@@ -178,16 +170,3 @@ df_n0=dfn0.merge(data2, left_on='kode_negara', right_on='name', how='inner')
 dffinal = df_n0[['name', 'alpha-3','region','sub-region']]
 
 st.dataframe(dffinal)
-'''
-for index in dfn0.index:
-    negara_n0 = dfn0.loc[index,'kode_negara']
-    n=0
-    for kode in data:
-        if negara_n0 == kode["name"]: 
-            st.write('Nama Negara :', data[n]["name"])
-            st.write('Kode Negara :',data[n]['alpha-3'])
-            st.write('Region      :',data[n]['region'])
-            st.write('Sub-Region  :',data[n]['sub-region'])
-            st.write(' ')
-        n=n+1
-'''
