@@ -19,7 +19,7 @@ dfcode = dfc['kode_negara'].values.tolist()
 dfnegara = list()
 
 for country_code in dfcode:
-           for country_name in dfjson:
+           for country_name in data:
                       if country_code == country_name["alpha-3"]:
                                  country_code = country_name["name"]
            dfnegara.append(country_code)
