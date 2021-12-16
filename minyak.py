@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import json
-import pillow
+import PIL
 
 st.set_page_config(layout="wide")
 st.title("Aplikasi Analisis Data Produksi Minyak Mentah Dunia")
