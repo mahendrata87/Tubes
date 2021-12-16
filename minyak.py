@@ -2,10 +2,6 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import json
-from pillow import image 
-
-image = Image.open('tj_logo.png')
-st.sidebar.image(image)
 
 st.sidebar.title("Pengaturan")
 left_col, mid_col, right_col = st.columns(3)
