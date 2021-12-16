@@ -5,6 +5,7 @@ import json
 
 st.sidebar.title("Pengaturan")
 left_col, mid_col, right_col = st.columns(3)
+
 st.set_page_config(layout="wide")
 st.title("Aplikasi Analisis Data Produksi Minyak Mentah Dunia Tahun 1971 - 2015")
 
