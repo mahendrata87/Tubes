@@ -124,3 +124,22 @@ for kode in data:
         st.write('Sub-Region  :',data[j]['sub-region'])
         st.write("Dengan produksi minyak mentah sebesar = ", produksi_min)
     j=j+1
+           
+#Negara Penghasil minyak mentah terkecil kumulatif
+st.subheader("Data Negara Penghasil Minyak Mentah Terkecil Keseluruhan Tahun")
+dfk = dfa.sort_values(['produksi'],ascending=[1])
+dft = dfk.loc[dfk["produksi"] > 0]
+
+jmin = dft["produksi"].idxmin()
+produksi_jmin = dft.loc[jmin,'produksi']
+negara_jmin = dft.loc[jmin,'kode_negara']
+l = 0
+
+for kode in data:
+    if negara_jmin == kode["name"]:
+        st.write('Nama Negara :', data[l]["name"])
+        st.write('Kode Negara :',data[l]['alpha-3'])
+        st.write('Region      :',data[l]['region'])
+        st.write('Sub-Region  :',data[l]['sub-region'])
+        st.write("Dengan produksi minyak mentah sebesar = ", produksi_jmin)
+    l=l+1
