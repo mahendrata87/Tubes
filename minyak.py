@@ -43,7 +43,7 @@ fig, ax = plt.subplots()
 ax.plot(dff['tahun'], dff['produksi'])
 st.pyplot(fig)
 
-#====================================Plot2==================================
+#=================================================Plot2====================================================
 st.header("Grafik Negara Penghasil Minyak Mentah Terbesar di Setiap Tahun")
 int_slide = st.slider('Tahun :', min_value=1971, max_value=2015, value=1971, step=1)
 int_num = st.number_input('Berapa Besar (untuk 2 grafik) :', min_value=1, max_value=15, value=5, step=1)
@@ -54,7 +54,19 @@ df4 = df3.head(int(int_num))
 fig2, axs = plt.subplots()
 axs.bar(df4['kode_negara'], df4['produksi'])
 st.pyplot(fig2)
+#=========================================Plot3=========================================
+st.header("Grafik Negara Penghasil Minyak Mentah Terbesar Kumulatif")
+dfa = dfc.groupby(['kode_negara'], as_index=False)['produksi'].agg('sum')
+dfb = dfa.sort_values(['produksi'],ascending=[0])
+df5 = dfb.head(int(int_num))
 
+fig3, axs3 = plt.subplots()
+axs3.bar(df5['kode_negara'], df5['produksi'])
+st.pyplot(fig3)
+
+#======================================Summary==========================================
+
+#negara Penghasil minyak mentah terbesar pada tahun T
 imax = df3["produksi"].idxmax()
 produksi_max = df3.loc[imax,'produksi']
 negara_max = df3.loc[imax,'kode_negara']
@@ -70,13 +82,4 @@ for kode in data:
         st.write('Sub-Region  :',data[i]['sub-region'])
         st.write("Dengan produksi minyak mentah sebesar = ", produksi_max)
     i=i+1
-
-#Plot3
-st.header("Grafik Negara Penghasil Minyak Mentah Terbesar Kumulatif")
-dfa = dfc.groupby(['kode_negara'], as_index=False)['produksi'].agg('sum')
-dfb = dfa.sort_values(['produksi'],ascending=[0])
-df5 = dfb.head(int(int_num))
-
-fig3, axs3 = plt.subplots()
-axs3.bar(df5['kode_negara'], df5['produksi'])
-st.pyplot(fig3)
+#negara Penghasil minyak mentah terkecil pada tahun T
