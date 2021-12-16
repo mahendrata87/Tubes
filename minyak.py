@@ -12,7 +12,7 @@ dfc=df.drop(df.index[df['kode_negara'].isin(['WLD', 'G20','OECD','OEU','EU28'])]
 
 with open("kode_negara_lengkap.json") as f:
            data = json.load(f)
-
+st.subheader("Data csv :")
 st.dataframe(dfc)
 
 #==================================================== Plot1 ====================================================
