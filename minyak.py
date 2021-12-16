@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import json
-from PIL import image 
+from pillow import image 
 
 image = Image.open('tj_logo.png')
 st.sidebar.image(image)
