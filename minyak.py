@@ -21,6 +21,7 @@ for country_code in dfcode:
                       if country_code == country_name["alpha-3"]:
                                  country_code = country_name["name"]
            dfnegara.append(country_code)
+
 dfc["kode_negara"] = dfnegara
 dfr = dfc.sort_values(by=['kode_negara'], ascending=True)
 df_baru = dfr.drop_duplicates('kode_negara')
