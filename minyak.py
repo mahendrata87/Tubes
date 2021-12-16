@@ -79,6 +79,7 @@ st.pyplot(fig3)
 st.header("Data Summary")
 #Negara Penghasil minyak mentah terbesar pada tahun T
 st.subheader("Data Negara Penghasil Minyak Mentah Terbesar pada Tahun") 
+st.write(int_slide)
 
 imax = df3["produksi"].idxmax()
 produksi_max = df3.loc[imax,'produksi']
@@ -96,7 +97,6 @@ for kode in data:
     i=i+1
 #Negara Penghasil minyak mentah terbesar kumulatif
 st.subheader("Data Negara Penghasil Minyak Mentah Terbesar Keseluruhan Tahun")
-st.write(int_slide)
 
 jmax = dfb["produksi"].idxmax()
 produksi_jmax = dfb.loc[jmax,'produksi']
