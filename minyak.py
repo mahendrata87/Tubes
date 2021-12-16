@@ -62,7 +62,7 @@ df4 = df3.head(int(int_num))
 
 fig2, axs = plt.subplots()
 axs.bar(df4['kode_negara'], df4['produksi'])
-#axs.xticks(df4['produksi'], df4['kode_negara'],rotation=80)
+axs.xticks()
 st.pyplot(fig2)
 
 #==================================================== Plot3 ====================================================
