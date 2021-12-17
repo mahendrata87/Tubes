@@ -53,7 +53,8 @@ negara = select
 dff = df_baru.loc[df_baru['kode_negara'] == negara]
 plt.plot(dff['tahun'], dff['produksi'])
 
-fig = plt.bar(dff['tahun'], dff['produksi'])
+fig = plt.figure(figsize=(12, 5))
+plt.plot(dff['tahun'], dff['produksi'])
 #fig, ax = plt.subplots()
 #ax.plot(dff['tahun'], dff['produksi'])
 plt.xlabel('Tahun')
