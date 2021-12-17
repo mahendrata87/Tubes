@@ -55,6 +55,7 @@ plt.plot(dff['tahun'], dff['produksi'])
 
 fig, ax = plt.subplots()
 ax.plot(dff['tahun'], dff['produksi'])
+ax.xlabel('Tahun')
 ax.grid()
 st.pyplot(fig)
 
