@@ -23,10 +23,11 @@ with open("kode_negara_lengkap.json") as f:
 data1 = pd.DataFrame.from_dict(data)
 data2 = data1[['name', 'alpha-3','region','sub-region']]
 
-st.subheader("Data csv")
+st.subheader("Data Mentah")
 
 dfcc = dfc.merge(data2, left_on='kode_negara', right_on='alpha-3', how='inner')
-st.dataframe(dfcc)
+dfdata = dfcc[['kode_negara','name','tahun','produksi','region','sub-region']]
+st.dataframe(dfdata)
 
 #==================================================== Plot1 ====================================================
 st.header("Grafik Besar Produksi Minyak Mentah Setiap Negara per Tahun")
