@@ -94,13 +94,14 @@ int_slide2 = st.slider('Pilih Tahun (T) :', min_value=1971, max_value=2015, valu
 
 #Negara Penghasil minyak mentah terbesar pada tahun T
 st.subheader("Data Negara Penghasil Minyak Mentah Terbesar pada Tahun") 
+st.write(int_slide2)
 
-dfbig= dfc.loc[dfc['tahun'] == int_slide2]
-dfbigger = dfbig.sort_values(["produksi"], ascending=False)
+dfslide2= dfc.loc[dfc['tahun'] == int_slide2]
+dfbig = dfslide2.sort_values(["produksi"], ascending=False)
 
-imax = dfbigger["produksi"].idxmax()
-produksi_max = dfbigger.loc[imax,'produksi']
-negara_max = dfbigger.loc[imax,'kode_negara']
+imax = dfbig["produksi"].idxmax()
+produksi_max = dfbig.loc[imax,'produksi']
+negara_max = dfbig.loc[imax,'kode_negara']
 i = 0
 
 for kode in data:
@@ -112,6 +113,7 @@ for kode in data:
         st.write('Sub-Region  :',data[i]['sub-region'])
         st.write("Dengan produksi minyak mentah sebesar = ", produksi_max)
     i=i+1
+
 #Negara Penghasil minyak mentah terbesar kumulatif
 st.subheader("Data Negara Penghasil Minyak Mentah Terbesar Keseluruhan Tahun")
 
@@ -131,9 +133,10 @@ for kode in data:
 
 #Negara Penghasil minyak mentah terkecil pada tahun T
 st.subheader("Data Negara Penghasil Minyak Mentah Terkecil pada Tahun") 
-st.write(int_slide)
+st.write(int_slide2)
 
-dfst0 = df2.sort_values(["produksi"], ascending=True)
+
+dfst0 = dfslide2.sort_values(["produksi"], ascending=True)
 dfmt0 = dfst0.loc[dfst0["produksi"] > 0]
 imin = dfmt0["produksi"].idxmin()
 produksi_min = dfmt0.loc[imin,'produksi']
