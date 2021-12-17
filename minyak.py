@@ -115,7 +115,7 @@ for kode in data:
     i=i+1
 
 #Negara Penghasil minyak mentah terbesar kumulatif
-st.subheader("Data Negara Penghasil Minyak Mentah Terbesar Keseluruhan Tahun")
+st.subheader("Data Negara Penghasil Minyak Mentah Terbesar Kumulatif")
 
 jmax = dfb["produksi"].idxmax()
 produksi_jmax = dfb.loc[jmax,'produksi']
@@ -154,7 +154,7 @@ for kode in data:
     j=j+1
            
 #Negara Penghasil minyak mentah terkecil kumulatif
-st.subheader("Data Negara Penghasil Minyak Mentah Terkecil Keseluruhan Tahun")
+st.subheader("Data Negara Penghasil Minyak Mentah Terkecil Kumulatif")
 dfk = dfa.sort_values(['produksi'],ascending=[1])
 dft = dfk.loc[dfk["produksi"] > 0]
 
@@ -174,9 +174,9 @@ for kode in data:
 
 #Negara yang Tidak Memproduksi Minyak pada Tahun T
 st.subheader("Data Negara yang Tidak Memproduksi Minyak pada Tahun") 
-st.write(int_slide)
+st.write(int_slide2)
 
-df0 = df2.loc[df2["produksi"] == 0]
+df0 = dfslide2.loc[dfslide2["produksi"] == 0]
 df_0 = df0.merge(data2, left_on='kode_negara', right_on='name', how='inner')
 df__0 = df_0[['name', 'alpha-3','region','sub-region']]
 df__0.rename(columns={'alpha-3': 'code'}, inplace=True)
