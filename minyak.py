@@ -1,3 +1,4 @@
+#Syahrial Fitrachman 12220060
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -8,6 +9,7 @@ st.set_page_config(layout="wide")
 st.title("Aplikasi Analisis Data Produksi Minyak Mentah Dunia")
 st.subheader('dibuat oleh Syahrial Fitrachman (12220060)')
 
+st.sidebar.title('Selamat Datang!')
 image = Image.open('oils.png')
 st.sidebar.image(image)
 
@@ -87,13 +89,18 @@ st.pyplot(fig3)
 
 #=================================================== Data Summary ==============================================
 st.header("Data Summary")
-#Negara Penghasil minyak mentah terbesar pada tahun T
-st.subheader("Data Negara Penghasil Minyak Mentah Terbesar pada Tahun", str_slide) 
-st.write(int_slide)
 
-imax = df3["produksi"].idxmax()
-produksi_max = df3.loc[imax,'produksi']
-negara_max = df3.loc[imax,'kode_negara']
+int_slide2 = st.slider('Pilih Tahun (T) :', min_value=1971, max_value=2015, value=1971, step=1)
+
+#Negara Penghasil minyak mentah terbesar pada tahun T
+st.subheader("Data Negara Penghasil Minyak Mentah Terbesar pada Tahun") 
+
+dfbig= dfc.loc[dfc['tahun'] == int_slide2]
+dfbigger = dfbig.sort_values(["produksi"], ascending=False)
+
+imax = dfbigger["produksi"].idxmax()
+produksi_max = dfbigger.loc[imax,'produksi']
+negara_max = dfbigger.loc[imax,'kode_negara']
 i = 0
 
 for kode in data:
