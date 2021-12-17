@@ -26,7 +26,7 @@ data2 = data1[['name', 'alpha-3','region','sub-region']]
 st.subheader("List Negara dan Data Produksi")
 
 dfcc = dfc.merge(data2, left_on='kode_negara', right_on='alpha-3', how='inner')
-dfdata = dfcc[['name','kode_negara','tahun','produksi','region','sub-region']]
+dfdata = dfcc[['name','kode_negara','tahun','produksi']
 st.dataframe(dfdata)
 
 #==================================================== Plot1 ====================================================
