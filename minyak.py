@@ -97,7 +97,7 @@ st.header("Data Summary")
 int_slide2 = st.slider('Pilih Tahun (T) untuk Data Summary :', min_value=1971, max_value=2015, value=1971, step=1)
 
 #Negara Penghasil minyak mentah terbesar pada tahun T
-st.subheader("Data Negara Penghasil Minyak Mentah Terbesar pada Tahun") 
+st.subheader("Data Negara Penghasil Minyak Mentah Terbesar pada Tahun (T)") 
 st.write(int_slide2)
 
 dfslide2= dfc.loc[dfc['tahun'] == int_slide2]
@@ -136,7 +136,7 @@ for kode in data:
     k=k+1
 
 #Negara Penghasil minyak mentah terkecil pada tahun T
-st.subheader("Data Negara Penghasil Minyak Mentah Terkecil pada Tahun") 
+st.subheader("Data Negara Penghasil Minyak Mentah Terkecil pada Tahun (T)") 
 st.write(int_slide2)
 
 
@@ -177,7 +177,7 @@ for kode in data:
     l=l+1
 
 #Negara yang Tidak Memproduksi Minyak pada Tahun T
-st.subheader("Data Negara yang Tidak Memproduksi Minyak pada Tahun") 
+st.subheader("Data Negara yang Tidak Memproduksi Minyak pada Tahun (T)") 
 st.write(int_slide2)
 
 df0 = dfslide2.loc[dfslide2["produksi"] == 0]
