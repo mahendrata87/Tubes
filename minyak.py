@@ -64,7 +64,7 @@ st.pyplot(fig)
 st.header("Grafik Negara Penghasil Minyak Mentah Terbesar di Setiap Tahun")
 
 int_slide = st.slider('Tahun (T) :', min_value=1971, max_value=2015, value=1971, step=1)
-int_num = st.number_input('Berapa Besar (B) :', min_value=1, max_value=50, value=3, step=1)
+int_num = st.number_input('Berapa Besar (B) :', min_value=1, max_value=50, value=10, step=1)
 str_slide = str(int_slide)
 
 df2= dfc.loc[dfc['tahun'] == int_slide]
