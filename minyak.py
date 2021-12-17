@@ -55,8 +55,7 @@ plt.plot(dff['tahun'], dff['produksi'])
 
 fig = plt.figure(figsize=(12, 5))
 plt.plot(dff['tahun'], dff['produksi'])
-#fig, ax = plt.subplots()
-#ax.plot(dff['tahun'], dff['produksi'])
+plt.ylabel('Jumlah Produksi')
 plt.xlabel('Tahun')
 plt.grid()
 st.pyplot(fig)
@@ -74,7 +73,8 @@ df4 = df3.head(int(int_num))
 
 fig2 = plt.figure(figsize=(12, 5))
 plt.bar(df4['kode_negara'], df4['produksi'])
-
+plt.ylabel('Jumlah Produksi')
+plt.xlabel('Negara')
 plt.xticks(rotation='vertical')
 st.pyplot(fig2)
 
@@ -86,7 +86,8 @@ df5 = dfb.head(int(int_num))
 
 fig3 = plt.figure(figsize=(12, 5))
 plt.bar(df5['kode_negara'], df5['produksi'])
-
+plt.ylabel('Total Produksi')
+plt.xlabel('Negara')
 plt.xticks(rotation='vertical')
 st.pyplot(fig3)
 
