@@ -12,6 +12,8 @@ st.sidebar.title('Selamat Datang !')
 image = Image.open('oils.png')
 st.sidebar.image(image)
 st.sidebar.header('Aplikasi ini dibuat oleh:')
+st.sidebar.markdown('Syahrial Fitrachman')
+st.sidebar.markdown('NIM : 12220060')
 left_col, mid_col, right_col = st.columns(3)
 
 df = pd.read_csv('produksi_minyak_mentah.csv')
