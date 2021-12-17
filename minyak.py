@@ -94,7 +94,7 @@ st.pyplot(fig3)
 #=================================================== Data Summary ==============================================
 st.header("Data Summary")
 
-int_slide2 = st.slider('Pilih Tahun (T) :', min_value=1971, max_value=2015, value=1971, step=1)
+int_slide2 = st.slider('Pilih Tahun untuk Data Summary (T) :', min_value=1971, max_value=2015, value=1971, step=1)
 
 #Negara Penghasil minyak mentah terbesar pada tahun T
 st.subheader("Data Negara Penghasil Minyak Mentah Terbesar pada Tahun") 
