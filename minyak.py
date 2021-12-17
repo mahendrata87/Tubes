@@ -83,9 +83,11 @@ st.pyplot(fig2)
 
 #==================================================== Plot3 ====================================================
 st.header("Grafik Negara Penghasil Minyak Mentah Terbesar Kumulatif")
+int_num2 = st.number_input('Berapa Besar (B) :', min_value=1, max_value=50, value=10, step=1)
+
 dfa = dfc.groupby(['kode_negara'], as_index=False)['produksi'].agg('sum')
 dfb = dfa.sort_values(['produksi'],ascending=[0])
-df5 = dfb.head(int(int_num))
+df5 = dfb.head(int(int_num2))
 
 fig3 = plt.figure(figsize=(12, 5))
 plt.bar(df5['kode_negara'], df5['produksi'])
